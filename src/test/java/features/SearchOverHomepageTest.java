@@ -2,7 +2,6 @@ package features;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.WithTag;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
@@ -10,7 +9,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import steps.NavigationSteps;
+import steps.Steps;
 
 import static net.thucydides.core.annotations.ClearCookiesPolicy.BeforeEachTest;
 
@@ -22,8 +21,8 @@ public class SearchOverHomepageTest {
     @Managed(clearCookies=BeforeEachTest)
     private WebDriver driver;
 
-    @Steps
-    private NavigationSteps navigationSteps;
+    @net.thucydides.core.annotations.Steps
+    private Steps navigationSteps;
 
     @Before
     public void setUp(){
