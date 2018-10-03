@@ -8,19 +8,19 @@ import pages.SearchResultsPage;
 import static org.hamcrest.CoreMatchers.containsString;
 import static org.junit.Assert.assertThat;
 
-public class Steps extends ScenarioSteps {
+public class SampleSteps extends ScenarioSteps {
 
     private Homepage homepage;
     private SearchResultsPage searchResultsPage;
 
     @Step("Navigate to homepage")
-    public Steps openHomepage() {
+    public SampleSteps openHomepage() {
         homepage.open();
         return this;
     }
 
     @Step("Search for \"{0}\"")
-    public Steps searchFor(String searchText) {
+    public SampleSteps searchFor(String searchText) {
         homepage
                 .enterSearchTerm(searchText)
                 .clickOnSearchButton();
@@ -28,7 +28,7 @@ public class Steps extends ScenarioSteps {
     }
 
     @Step("Headline contains text: \"{0}\"")
-    public Steps checkThatHeadlineContainsText(String text){
+    public SampleSteps checkThatHeadlineContainsText(String text){
         assertThat(searchResultsPage.getHeadline().getText(), containsString(text));
         return this;
     }

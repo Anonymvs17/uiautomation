@@ -2,6 +2,7 @@ package features;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.WithTag;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
@@ -9,7 +10,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import steps.Steps;
+import steps.SampleSteps;
 
 import static net.thucydides.core.annotations.ClearCookiesPolicy.BeforeEachTest;
 
@@ -21,8 +22,8 @@ public class SearchOverHomepageTest {
     @Managed(clearCookies=BeforeEachTest)
     private WebDriver driver;
 
-    @net.thucydides.core.annotations.Steps
-    private Steps navigationSteps;
+    @Steps
+    private SampleSteps sampleSteps;
 
     @Before
     public void setUp(){
@@ -34,7 +35,7 @@ public class SearchOverHomepageTest {
     @WithTag(name="Search")
     public void customerIsAbleToSearch() {
 
-        navigationSteps
+        sampleSteps
                 .openHomepage()
                 .searchFor(searchText)
                 .checkThatHeadlineContainsText(searchText);
