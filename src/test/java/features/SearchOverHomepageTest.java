@@ -32,6 +32,7 @@ public class SearchOverHomepageTest extends AbstractTest{
         sampleSteps
                 .openHomepage()
                 .searchFor(searchText)
-                .checkThatHeadlineContainsText(searchText);
+                .checkThatHeadlineContainsText(searchText)
+                .openFirstResult();
     }
 }

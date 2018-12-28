@@ -32,4 +32,10 @@ public class SampleSteps extends ScenarioSteps {
         assertThat(searchResultsPage.getHeadline().getText(), containsString(text));
         return this;
     }
+
+    @Step("Open first result")
+    public SampleSteps openFirstResult(){
+        searchResultsPage.openFirstResult();
+        return this;
+    }
 }

@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.WhenPageOpens;
 import net.thucydides.core.pages.PageObject;
 
+import java.time.Duration;
 import java.util.List;
 
 @DefaultUrl("https://www.ecx.io")
@@ -17,8 +18,8 @@ public class SearchResultsPage extends PageObject {
     @FindBy(css = "h1")
     private WebElementFacade headline;
 
-    @FindBy(className = "blog-item", timeoutInSeconds = "10")
-    private List<WebElementFacade>  blogItems;
+    @FindBy(css = "div.blog-item a.btn", timeoutInSeconds = "10")
+    private List<WebElementFacade> blogRowButtons;
 
     @WhenPageOpens
     public void waitUntilPageIndicatorAppears() {
@@ -28,4 +29,14 @@ public class SearchResultsPage extends PageObject {
     public WebElementFacade getHeadline(){
         return headline;
     }
+
+    public SearchResultsPage openFirstResult(){
+        WebElementFacade firstBlogRowButton = withTimeoutOf(Duration.ofSeconds(2)).waitFor(blogRowButtons).get(0);
+        firstBlogRowButton
+                .waitUntilClickable()
+                .waitUntilClickable()
+                .click();
+        return this;
+    }
+
 }
