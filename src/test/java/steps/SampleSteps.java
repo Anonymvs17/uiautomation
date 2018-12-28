@@ -2,6 +2,7 @@ package steps;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
+import pages.ContactUsPage;
 import pages.Homepage;
 import pages.SearchResultsPage;
 
@@ -12,6 +13,7 @@ public class SampleSteps extends ScenarioSteps {
 
     private Homepage homepage;
     private SearchResultsPage searchResultsPage;
+    private ContactUsPage contactUsPage;
 
     @Step("Navigate to homepage")
     public SampleSteps openHomepage() {
@@ -36,6 +38,24 @@ public class SampleSteps extends ScenarioSteps {
     @Step("Open first result")
     public SampleSteps openFirstResult(){
         searchResultsPage.openFirstResult();
+        return this;
+    }
+
+    @Step("Click on contact us button")
+    public SampleSteps clickOnContactUsButton(){
+        homepage.clickOnContactUsButton();
+        return this;
+    }
+
+    @Step("Typed in first name \"{0}\"")
+    public SampleSteps typeFirstName(String firstName){
+        contactUsPage.enterFirstName(firstName);
+        return this;
+    }
+
+    @Step("Type in last name \"{0}\"")
+    public SampleSteps typeLastName(String lastName){
+        contactUsPage.enterLastName(lastName);
         return this;
     }
 }

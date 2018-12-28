@@ -18,6 +18,9 @@ public class Homepage extends PageObject {
     @FindBy(css = ".search-form button", timeoutInSeconds = "10")
     private WebElementFacade searchButton;
 
+    @FindBy(css = "a[href*=\"contact\"]")
+    private WebElementFacade contactUsButton;
+
     @WhenPageOpens
     public void waitUntilPageIndicatorAppears() {
         element(pageIndicator).waitUntilVisible();
@@ -33,6 +36,14 @@ public class Homepage extends PageObject {
 
     public Homepage clickOnSearchButton(){
         searchButton.click();
+        return this;
+    }
+
+    public Homepage clickOnContactUsButton(){
+        contactUsButton
+                .waitUntilClickable()
+                .then()
+                .click();
         return this;
     }
 }
