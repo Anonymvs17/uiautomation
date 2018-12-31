@@ -8,6 +8,7 @@ import net.thucydides.core.pages.PageObject;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @DefaultUrl("https://www.ecx.io")
 public class SearchResultsPage extends PageObject {

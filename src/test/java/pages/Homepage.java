@@ -18,7 +18,7 @@ public class Homepage extends PageObject {
     @FindBy(css = ".search-form button", timeoutInSeconds = "10")
     private WebElementFacade searchButton;
 
-    @FindBy(css = "a[href*=\"contact\"]")
+    @FindBy(css = "p > a[href*=\"ont\"]", timeoutInSeconds = "10")
     private WebElementFacade contactUsButton;
 
     @WhenPageOpens

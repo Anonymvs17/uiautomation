@@ -1,5 +1,6 @@
 package steps;
 
+import modules.CookieBarModule;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
 import pages.ContactUsPage;
@@ -14,6 +15,7 @@ public class SampleSteps extends ScenarioSteps {
     private Homepage homepage;
     private SearchResultsPage searchResultsPage;
     private ContactUsPage contactUsPage;
+    private CookieBarModule cookieBarModule;
 
     @Step("Navigate to homepage")
     public SampleSteps openHomepage() {
@@ -56,6 +58,12 @@ public class SampleSteps extends ScenarioSteps {
     @Step("Type in last name \"{0}\"")
     public SampleSteps typeLastName(String lastName){
         contactUsPage.enterLastName(lastName);
+        return this;
+    }
+
+    @Step("Acceppt cookies")
+    public SampleSteps acceptCookies(){
+        cookieBarModule.acceptCookies();
         return this;
     }
 }
