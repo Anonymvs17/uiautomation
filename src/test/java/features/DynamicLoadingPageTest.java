@@ -6,11 +6,11 @@ import net.thucydides.core.annotations.WithTag;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import steps.SampleSteps;
+import steps.DynamicLoadingPageSteps;
 
 import static net.thucydides.core.annotations.ClearCookiesPolicy.BeforeEachTest;
 
-public class SearchOverHomepageTest extends AbstractTest{
+public class DynamicLoadingPageTest extends AbstractTest{
 
     private static String searchText;
 
@@ -18,7 +18,7 @@ public class SearchOverHomepageTest extends AbstractTest{
     private WebDriver driver;
 
     @Steps
-    private SampleSteps sampleSteps;
+    private DynamicLoadingPageSteps dynamicLoadingPageSteps;
 
     @Before
     public void setUp(){
@@ -26,12 +26,14 @@ public class SearchOverHomepageTest extends AbstractTest{
     }
 
     @Test
-    @WithTag(name="Search")
+    @WithTag(name="DynamicLoading")
     public void customerIsAbleToSearch() {
 
-        sampleSteps
-                .openHomepage()
-                .searchFor(searchText)
-                .checkThatHeadlineContainsText(searchText);
+        dynamicLoadingPageSteps
+                .openDynamicLoadingElementsPage()
+                .checkThatHeadlineContainsText("Dynamically Loaded Page Elements")
+                .clickOnFirstLink()
+                .clickOnStartButton()
+                .waitForLoadingElementAndVerifyText("Hello World!");
     }
 }
