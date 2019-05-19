@@ -105,7 +105,7 @@ public class DynamicLoadingPageSteps extends ScenarioSteps {
 As you see in the example, the _DynamicLoadingPageSteps.java_ is using the _DynamicLoadingOverviewPage_ (Page Object) to perform some actions.
  
 ### Tests
-Tests are using combining test steps to verify some scenario by also using specific test data.
+Tests are combining test steps to verify some scenario by also using specific test data.
 
 Tests are located in the _ui.features_ directory. 
 
