@@ -22,7 +22,7 @@ public class JqueryMenuPageTest extends AbstractTest {
     public void ableToSelectExcelField() {
         jQueryPageSteps.openJQueryMenuPage()
                 .clickOnEnabledButton()
-                .clickOnEnabledButton()
+                .clickOnDownloadField()
                 .clickOnExcelField();
     }
 }

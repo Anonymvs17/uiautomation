@@ -19,7 +19,7 @@ Clone repository
 git clone https://github.com/Anonymvs17/uiautomation.git
 ```
 
-Download latest Chromedriver at: http://chromedriver.chromium.org/downloads and copy it in the following directory: 
+Download latest Chromedriver for your Chrome version at: http://chromedriver.chromium.org/downloads and copy it in the following directory: 
 ```
 uiautomation/drivers
 ```
@@ -32,8 +32,19 @@ webdriver.chrome.driver=drivers/chromedriver.exe
 
 To run all test just simply execute
 ```
-mvn clean compile tests
+mvn verify
 ```
+
+## Reporting
+Once the tests are run a report will be automatically generated in _target/site/serenity/index.html_ and will look like this: 
+
+**Overview**
+
+![Report overview section](images/overview.png)
+
+**Test Section**
+
+![Test section](images/specificTests.png)
 
 ## Structure
 To enhance maintenance and reduce complexity this projects is divided into three main sections. 
@@ -133,7 +144,7 @@ but you can start your test with a different property file.
 
 Run with maven following command to run your test with with serenity-dev.properties
 
-`clean compile test -Dproperties=serenity-dev.properties`
+`mvn verify -Dproperties=serenity-dev.properties`
 
 In this case you can override test data for different environments, or also configure different browsers.
 
@@ -144,7 +155,7 @@ Once registered you will receive an Key from Applitools. Copy paste the key in t
 applitools.key=addYourKeyHere
 ```
 
-Once this is done you can use the AppliToolsService as illustrated in this test: 
+Once this is done you can use the ApplitoolsService as illustrated in this test: 
 ```java
 public class DynamicLoadingPageTest extends AbstractTest {
 
