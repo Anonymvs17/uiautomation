@@ -19,10 +19,11 @@ Clone repository
 git clone https://github.com/Anonymvs17/uiautomation.git
 ```
 
-Download latest Chromedriver for your Chrome version at: http://chromedriver.chromium.org/downloads and copy it in the following directory: 
+Download latest Chromedriver for your Chrome version at: http://chromedriver.chromium.org/downloads and create a new folder called _drivers_.
 ```
 uiautomation/drivers
 ```
+Copy the chromedriver.exe (in case Windows is used) in your created _drivers_ folder. 
 Make sure that the path to your chromedriver is correct in the `serenity.properties` in following property:
 ```
 webdriver.chrome.driver=drivers/chromedriver.exe
@@ -197,5 +198,5 @@ Once you run this test, an image comparison will be executed by Applitools on th
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License
 
