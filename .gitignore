@@ -1,0 +1,14 @@
+# IDE #
+###################
+.idea
+junit-quick.start.iml
+
+# drivers #
+############
+# it's better to download the drivers manually and not to check it is in github
+drivers/*
+
+
+# Targets #
+######################
+target
