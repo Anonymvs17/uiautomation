@@ -1,11 +1,9 @@
-package pages;
+package ui.pages;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
-
-import static org.hamcrest.MatcherAssert.assertThat;
 
 @DefaultUrl("/dynamic_loading")
 public class DynamicLoadingOverviewPage extends PageObject {
@@ -16,11 +14,11 @@ public class DynamicLoadingOverviewPage extends PageObject {
     @FindBy(css = "[href=\"/dynamic_loading/1\"]", timeoutInSeconds = "10")
     private WebElementFacade  firstLink;
 
-    public WebElementFacade getHeadline(String headlineText) {
+    public WebElementFacade getHeadline() {
         return headline;
     }
 
-    public void clickOnFirstLink(){
-        firstLink.click();
+    public WebElementFacade getFirstLink() {
+        return firstLink;
     }
 }

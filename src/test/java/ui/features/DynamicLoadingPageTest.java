@@ -1,34 +1,26 @@
-package features;
+package ui.features;
 
-import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.WithTag;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import steps.DynamicLoadingPageSteps;
+import ui.steps.DynamicLoadingPageSteps;
 
-import static net.thucydides.core.annotations.ClearCookiesPolicy.BeforeEachTest;
+public class DynamicLoadingPageTest extends AbstractTest {
 
-public class DynamicLoadingPageTest extends AbstractTest{
-
-    private static String searchText;
-
-    @Managed(clearCookies=BeforeEachTest)
-    private WebDriver driver;
+    private String searchText;
 
     @Steps
     private DynamicLoadingPageSteps dynamicLoadingPageSteps;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         searchText = getTestData().getProperty("testdata.searchterm");
     }
 
     @Test
-    @WithTag(name="DynamicLoading")
-    public void customerIsAbleToSearch() {
-
+    @WithTag(name = "DynamicLoading")
+    public void dynamicPageLoading() {
         dynamicLoadingPageSteps
                 .openDynamicLoadingElementsPage()
                 .checkThatHeadlineContainsText("Dynamically Loaded Page Elements")

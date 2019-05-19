@@ -55,6 +55,27 @@
             <version>1.7.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- This is the Applitools Selenium Java SDK -->
+        <dependency>
+            <groupId>com.applitools</groupId>
+            <artifactId>eyes-selenium-java3</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <!-- Required to run "mvn package" which runs test -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Required for Java 10 -->
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>
 
     </dependencies>
     <build>
@@ -104,4 +125,3 @@
         </plugins>
     </build>
 </project>
-
