@@ -5,7 +5,7 @@ junit-quick.start.iml
 
 # drivers #
 ############
-# it's better to download the drivers manually and not to check it is in github
+# it's better to download the drivers manually and not to upload it on github
 drivers/*
 
 
